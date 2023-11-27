@@ -58,16 +58,41 @@
 </head>
 <body>
     <div class="container">
-      <img src="logo.svg" alt="Zumo" class="logo">
+        <img src="logo.svg" alt="Zumo" class="logo">
         <div class="hello-world">
             <h1>Hello Zumo!</h1>
             <div class="separator"></div>
-     <form action="/submit" method="post">
-        <label for="nameInput">Name:</label>
-            <input type="text" id="nameInput" name="name" required><br><br>
-        <label for="valueInput">Value:</label>
-            <input type="text" id="valueInput" name="value" required><br><br>
+            <p>This is <em id="candidateName">["Candidate's Name"]</em>'s tech assignment</p>
+        </div>
+    </div>
+    <h2>
+        <p>Dynamic value: <span id="dynamicValue">[Value]</span></p>
+    </h2>
+
+    <!-- Form to input candidate's name and value -->
+    <div class="container">
+        <form id="inputForm">
+            <label for="candidate">Enter Candidate's Name:</label>
+            <input type="text" id="candidate" name="candidate"><br><br>
+            <label for="dynamicVal">Enter Dynamic Value:</label>
+            <input type="text" id="dynamicVal" name="dynamicVal"><br><br>
             <input type="submit" value="Submit">
-     </form>
+        </form>
+    </div>
+
+    <script>
+        // Function to handle form submission
+        document.getElementById('inputForm').addEventListener('submit', function(event) {v    
+            event.preventDefault(); // Prevents the default form submission
+
+            // Get the values entered in the form
+            var candidateName = document.getElementById('candidate').value;
+            var dynamicValue = document.getElementById('dynamicVal').value;
+
+            // Update the content in the HTML based on user input
+            document.getElementById('candidateName').textContent = candidateName;
+            document.getElementById('dynamicValue').textContent = dynamicValue;
+        }); nhbgvycfhn
+    </script>
 </body>
 </html>
