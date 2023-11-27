@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     networks:
-     - zumo
+     - zimo-nw
     volumes:
       - ./html:/usr/share/nginx/html
     depends_on:
@@ -16,7 +16,7 @@ services:
     image: mysql:latest
     restart: always
     networks:
-     - zumo
+     - zimo-nw
     environment:
      - MYSQL_ROOT_PASSWORD=root
      - MYSQL_DATABASE=sbms
@@ -26,4 +26,4 @@ volumes:
   db_data:
   
 networks:
-  zumo:
+  zimo-nw:
