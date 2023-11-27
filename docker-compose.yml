@@ -18,10 +18,8 @@ services:
     networks:
      - zumo
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: zumodb
-      MYSQL_USER: zumo
-      MYSQL_PASSWORD: root
+     - MYSQL_ROOT_PASSWORD=root
+     - MYSQL_DATABASE=sbms
     volumes:
       - db_data:/var/lib/mysql
 volumes:
