@@ -1,0 +1,29 @@
+  GNU nano 5.8                                docker-compose.yml                                           
+version: "3"
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    networks:
+     - zumo
+    volumes:
+      - ./html:/usr/share/nginx/html
+    depends_on:
+      - db
+      
+  db:
+    image: mysql:latest
+    restart: always
+    networks:
+     - zumo
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: zumodb
+      MYSQL_USER: zumo
+      MYSQL_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+networks:
+  zumo:
