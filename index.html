@@ -1,22 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Name and Value Input</title>
+    <title>Zumo's tech challenge</title>
+    <style>
+        /* Your existing styles */
+    </style>
 </head>
 <body>
+    <div class="container">
+        <img src="logo.svg" alt="Zumo" class="logo">
+        <div class="hello-world">
+            <h1>Hello Zumo!</h1>
+            <div class="separator"></div>
+            <p>This is <em id="candidateName">["Candidate's Name"]</em>'s tech assignment</p>
+        </div>
+    </div>
+    <h2>
+        <p>Dynamic value: <span id="dynamicValue">[Value]</span></p>
+    </h2>
 
-<h1>Enter Names and Values</h1>
+    <!-- Form to input candidate's name and value -->
+    <div class="container">
+        <form id="inputForm">
+            <label for="candidate">Enter Candidate's Name:</label>
+            <input type="text" id="candidate" name="candidate"><br><br>
+            <label for="dynamicVal">Enter Dynamic Value:</label>
+            <input type="text" id="dynamicVal" name="dynamicVal"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 
-<form action="/submit" method="post">
-    <label for="nameInput">Name:</label>
-    <input type="text" id="nameInput" name="name" required><br><br>
+    <script>
+        // Function to handle form submission
+        document.getElementById('inputForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the default form submission
 
-    <label for="valueInput">Value:</label>
-    <input type="text" id="valueInput" name="value" required><br><br>
+            // Get the values entered in the form
+            var candidateName = document.getElementById('candidate').value;
+            var dynamicValue = document.getElementById('dynamicVal').value;
 
-    <input type="submit" value="Submit">
-</form>
-
+            // Update the content in the HTML based on user input
+            document.getElementById('candidateName').textContent = candidateName;
+            document.getElementById('dynamicValue').textContent = dynamicValue;
+        });
+    </script>
 </body>
 </html>
