@@ -3,46 +3,69 @@
 <head>
     <title>Zumo's tech challenge</title>
     <style>
-        /* Your existing styles */
+        body {
+            height: 100vh;
+            width: 100%;
+            top: 0;
+            z-index: -1; 
+            background-image: url("background.png"), linear-gradient(255.16deg, #08001C 5.73%, #1A104D 96.3%);
+            background-repeat: no-repeat;   
+            background-position: 50% 0;
+              background-position-x: 50%;
+              background-position-y: 0px;
+            background-size: max(100%, 768px), 100%;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-top: 100px;
+        }
+        .hello-world {
+            text-align: center;
+            border-radius: 10px;
+            background: linear-gradient(to right, #240038, #b5007f);
+            padding: 20px;
+            box-shadow: 2px 5px 10px rgba(255, 255, 255, 0.25);
+            color: rgb(255, 255, 255);
+        }
+        h1 {
+            color: #ffffff;
+        }
+        h2 {
+            padding-top: 50px;
+            color: #e2faff;
+            text-align:center;
+            font-size: 1rem;
+        }
+        .separator {
+            width: 8.5rem;
+            height: 3px;
+            margin: 1.25rem auto;
+            background-color: #E93CAC;
+        }
+        .logo {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          height: 20px;
+          margin-bottom: 50px;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="logo.svg" alt="Zumo" class="logo">
+      <img src="logo.svg" alt="Zumo" class="logo">
         <div class="hello-world">
             <h1>Hello Zumo!</h1>
             <div class="separator"></div>
-            <p>This is <em id="candidateName">["Candidate's Name"]</em>'s tech assignment</p>
+            <p>This is &lt;<em>candidate's name</em>&gt; tech assignment</p>
         </div>
     </div>
     <h2>
-        <p>Dynamic value: <span id="dynamicValue">[Value]</span></p>
-    </h2>
-
-    <!-- Form to input candidate's name and value -->
-    <div class="container">
-        <form id="inputForm">
-            <label for="candidate">Enter Candidate's Name:</label>
-            <input type="text" id="candidate" name="candidate"><br><br>
-            <label for="dynamicVal">Enter Dynamic Value:</label>
-            <input type="text" id="dynamicVal" name="dynamicVal"><br><br>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-
-    <script>
-        // Function to handle form submission
-        document.getElementById('inputForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents the default form submission
-
-            // Get the values entered in the form
-            var candidateName = document.getElementById('candidate').value;
-            var dynamicValue = document.getElementById('dynamicVal').value;
-
-            // Update the content in the HTML based on user input
-            document.getElementById('candidateName').textContent = candidateName;
-            document.getElementById('dynamicValue').textContent = dynamicValue;
-        });
-    </script>
+        <p>Dynamic value: &lt;<em>value</em>&gt; </p>
+    </h2>    
 </body>
 </html>
